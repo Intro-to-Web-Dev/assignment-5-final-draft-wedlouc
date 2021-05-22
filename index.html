@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!--
+            Improvements since Assignment 4
+            -------------------------------
+            1. Added print button to each tutorial that changes the page styling to be print-optimized (User gets alerted when trying to print on mobile that it isn't supported)
+            2. Added "days since last updated" to tutorial index
+            3. Added back button to each tutorial, allowing for navigation back to index.  This button hides itself when the page is printed
+            4. Added page spinning easter egg to the home page.  Press s to activate. (Adding fun counts as a significant improvement, right?)
+        -->
+        <title>Louis' Tutorials - Home</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Louis' Tutorials homepage">
+        <meta name="keywords" content="tutorial, guide, open-source, technical">
+        <meta name="author" content="Louis Weddall">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
+    <body>
+        <header>
+            <h1>Louis' Tutorials</h1>
+            <nav>
+                <a href="./index.html"><span class="material-icons">home</span>Home</a>
+                <a href="./tutorials.html"><span class="material-icons">article</span>Tutorials</a>
+                <a href="./contribute.html"><span class="material-icons">create</span>Contribute</a>
+                <a href="./about.html"><span class="material-icons">info</span>About</a>
+            </nav>
+        </header>
+        <main>
+            <div id="content">
+                <h2>Home</h2>
+                <div id="home-flex-container">
+                    <section class="home-flex-item">
+                        <h3>Welcome</h3>
+                        <div>
+                            <p>This website is a resource containing tutorials on a variety of technical topics.  All content is licensed under the Creative Commons BY-NC 4.0 license, allowing it to be adapted and reused for any noncommercial purpose with attribution.  Additionally, you may submit tutorials of your own for inclusion.  See the Contribute page for details.</p>
+                        </div>
+                    </section>
+                    <section class="home-flex-item">
+                        <h3>Goals</h3>
+                        <div>
+                            <ul>
+                                <li>Each tutorial should work as a standalone document</li>
+                                <li>Anyone should be able to contribute with ease</li>
+                                <li>The site should be lightweight and responsive, to allow easy use on any device</li>
+                                <li>Take a minimalistic approach to design</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <footer>Updated 2021-05-05 | This work is licensed under CC BY-NC 4.0</footer>
+        <script>
+            document.addEventListener("keypress", function(event){
+                if (event.keyCode == 115) {
+                    document.body.style = "animation-name: spin; animation-duration: 2s;";
+                }
+            });
+        </script>
+    </body>
+</html>

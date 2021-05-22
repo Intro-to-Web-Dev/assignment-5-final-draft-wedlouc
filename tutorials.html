@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Louis' Tutorials - Tutorials</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Louis' Tutorials tutorial index">
+        <meta name="keywords" content="tutorial, guide, open-source, technical">
+        <meta name="author" content="Louis Weddall">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
+    <body>
+        <header>
+            <h1>Louis' Tutorials</h1>
+            <nav>
+                <a href="./index.html"><span class="material-icons">home</span>Home</a>
+                <a href="./tutorials.html"><span class="material-icons">article</span>Tutorials</a>
+                <a href="./contribute.html"><span class="material-icons">create</span>Contribute</a>
+                <a href="./about.html"><span class="material-icons">info</span>About</a>
+            </nav>
+        </header>
+        <main>
+            <div id="content">
+                <h2>Tutorial Index</h2>
+                <div class="listing">
+                    <h3><a href="./tutorials/pacman.html">How Use The Pacman Package Manager</a></h3>
+                    <p class="listing-description">This guide will show you how to use pacman, the package manager of Arch Linux and its derivatives.  Despite being a very efficient and powerful package manager, it can often be unintuitive to new users.  This guide intends to aide those users in becoming accustomed to some of the most common pacman commands.</p>
+                    <p class="listing-credit">Written by Louis Weddall | Updated <span class="date-updated">2021-04-30</span></p>
+                </div>
+                <hr>
+                <div class="listing">
+                    <h3><a href="./tutorials/pacman.html">Tutorial TBD</a></h3>
+                    <p class="listing-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p class="listing-credit">Written by Firstname Lastname | Updated <span class="date-updated">2021-05-21</span></p>
+                </div>
+            </div>
+        </main>
+        <footer>Updated 2021-05-05 | This work is licensed under CC BY-NC 4.0</footer>
+    </body>
+    <script>
+        // Sets the number of milliseconds in a day for later use
+        const ms_in_day = 86400000;
+        //Takes all "date-updated" <span>s from the page and adds them to an array to make iterating on them easier
+        var allUpdatedDates = Array.from(document.getElementsByClassName("date-updated"));
+
+        /*
+        For each date element in the array, convert it to a proper JS date, and subtract it from the current date.
+        Then convert that difference into days and append that to the original string.
+        */
+        allUpdatedDates.forEach(addElapsedDays);
+        function addElapsedDays(value, index, array) {
+            var published_date = new Date(value.innerHTML);
+            var current_date = new Date();
+
+            var elapsed_ms = current_date - published_date;
+            var elapsed_days = Math.round(elapsed_ms / ms_in_day);
+            
+            value.innerHTML = value.innerHTML + " (" + elapsed_days + " days ago)";
+        }
+    </script>
+</html>

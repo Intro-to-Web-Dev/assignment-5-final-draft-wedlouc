@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Pacman Package Manager</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="How to use the pacman package manager">
+        <meta name="keywords" content="pacman, package manager, linux, arch, tutorial, guide">
+        <meta name="author" content="Louis Weddall">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="../css/styles.css">
+    </head>
+    <body>
+        <header id="tutorial-header">
+            <h1>How To Use The Pacman Package Manager</h1>
+        </header>
+        <main>
+            <div id="content" class="tutorial-content">
+                <section class="tutorial-section">
+                    <h2>Introduction</h2>
+                    <p>Pacman is the package manager used by <a href="https://archlinux.org/">Arch Linux</a> and many of its derivatives.  While it is rightfully praised for its speed and versatility, its somewhat unintuitive command structure may make for a steep learning curve for some users.  In this guide, we will learn some of the most essential pacman commands to get you started.</p>
+                    <p>Note that most of these command need to be run as root, so either precede them with sudo, or login as root with the su command.</p>
+                </section>
+                <section class="tutorial-section">
+                    <h2>Search For Packages</h2>
+                    <p>To search for packages, use the following syntax</p>
+                    <code>pacman -Ss [search query]</code>
+                    <p>This will tell pacman to search the repositories for anything that matches your search query</p>
+                </section>
+                <section class="tutorial-section">
+                    <h2>Install Packages</h2>
+                    <p>To install packages, use the following syntax</p>
+                    <code>pacman -S [package name]</code>
+                    <p>Additionally, you can add as many package names as you want to this command and it will install all of them.</p>    
+                </section>
+                <section class="tutorial-section">
+                    <h2>Remove Packages</h2>
+                    <p>The most effective way to remove a package is with the following syntax</p>
+                    <code>pacman -Rns [package name]</code>
+                    <p>This will remove the package, all of its dependencies, and some of the its configuration files.</p>    
+                </section>
+                <section class="tutorial-section">
+                    <h2>Upgrade Packages</h2>
+                    <p>To upgrade all the packages on your system to the latest available versions, use the following command.</p>
+                    <code>pacman -Syu</code>
+                </section>
+            </div>
+            <div id="tutorial-button-container">
+                <a class="back-button" href="../tutorials.html"><span class="material-icons">arrow_back</span>Back To Index</a>
+                <a class="back-button" href="javascript:tryPrinting()"><span class="material-icons">print</span>Print</a>
+            </div>
+        </main>
+        <footer>Updated 2021-05-17 | This work is licensed under CC BY-NC 4.0</footer>
+        <script>
+            // This function only lets the user print if they're not on a mobile device
+            function tryPrinting() {
+                // Check the UserAgent for a mobile device.
+                if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                    // If they are on a mobile device, alert that printing is not supported
+                    window.alert("Printing not supported on mobile devices")
+                } else {
+                    // If they are not on a mobile device, print the window
+                    window.print()
+                }
+            }
+        </script>
+    </body>
+</html>
